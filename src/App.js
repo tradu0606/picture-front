@@ -35,7 +35,7 @@ class App extends Component {
               }} />
             <Route path="/picture"
               render={(props) => {
-                return (<Picture {...props} />)
+                return (<Picture {...props} data="tanya"/>)
               }} />
 
 

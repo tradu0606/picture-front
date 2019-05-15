@@ -31,12 +31,8 @@
     transform: rotate(360deg);
   }
 }
-.picHolder{
-  width: 400px;
-}
-img{
-  width: 400px;
-}
+
+
 body{
   text-align: center;
 }
@@ -63,4 +59,19 @@ margin: 0 auto;
 .signup{
   margin: 0 auto;
   width: 500px;
+}
+.imgContainer{
+ margin: 0 auto;
+ display: flex;
+ width: 85%;
+ flex-flow: row wrap;
+ justify-content: flex-end;
+align-items: flex-end;
+}
+.picHolder{
+  width: 50%;
+  margin: 0;
+}
+img{
+  width: 100%;
 }
