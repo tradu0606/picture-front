@@ -31,3 +31,36 @@
     transform: rotate(360deg);
   }
 }
+.picHolder{
+  width: 400px;
+}
+img{
+  width: 400px;
+}
+body{
+  text-align: center;
+}
+
+.navbar{
+  background-color: rgb(95, 91, 122);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.navbar h3{
+  display: inline;
+  margin: 10px;
+}
+.navbar h1{
+  margin: 0;
+}
+.mainContainer{
+  text-align: center;
+}
+input{
+display: block;
+margin: 0 auto;
+}
+.signup{
+  margin: 0 auto;
+  width: 500px;
+}
