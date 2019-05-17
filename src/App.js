@@ -5,8 +5,23 @@ import CreateAccount from "./User/CreateAccount"
 import Home from "./User/Home"
 import './App.css'
 import Picture from './Picture/PictureDisplay'
+import FavoritePictures from './Picture/FavoritePictures';
+import axios from 'axios'
 
 class App extends Component {
+getFavorites = e =>{
+  axios.get("http://localhost:3001/favorites", {
+    data: { email: "fvf"},
+    headers: { "Content-Type": "application/json" }
+}).then(pic => {
+    console.log(pic)
+    var temp = []
+    temp.push(pic)
+    this.setState({
+        pic: temp
+    })
+})
+}
   render() {
     return (
       <Router>
@@ -18,6 +33,7 @@ class App extends Component {
               <Link to="/login"><h3>Login</h3></Link>
               <Link to="/createaccount"><h3>Create an Account</h3></Link>
               <Link to="/picture"><h3>Pictures</h3></Link>
+              <Link to="/favorites"><h3 onClick={this.getFavorites}>My pictures</h3></Link>
             </nav>
           </div>
           <div className="mainContainer">
@@ -37,9 +53,11 @@ class App extends Component {
               render={(props) => {
                 return (<Picture {...props} data="tanya"/>)
               }} />
+            <Route path="/favorites"
+            render={(props) => {return (<FavoritePictures {...props} email='fvf'/>)} }/>
 
 
-          </div>
+          </div> 
         </div>
       </Router >
     );

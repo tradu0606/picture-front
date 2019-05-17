@@ -11,7 +11,7 @@ class PictureDisplay extends Component {
     createFavorites(event){
         event.preventDefault()
         let data ={
-            email: "tanya",
+            email: "fvf",
             like: event.target.src
         }
         console.log(data)
