@@ -20,26 +20,15 @@ class FavoritePictures extends Component {
             
         })
     }
-    componentDidMount() {
-        axios.get("http://localhost:3001/favorites", {
-            data: { email: this.props.email },
-            headers: { "Content-Type": "application/json" }
-        }).then(pic => {
-            console.log(pic)
-            var temp = []
-            temp.push(pic)
-            this.setState({
-                pic: temp
-            })
-        })
-    }
+
+
     render() {
         return (
             <div>
                 {this.state.pic.map(url => {
                     return (<div>
-                        <img src={url}></img>
-                        <input type="button" onClick={()=>this.deletePic(url)}></input>
+                        <img alt="My picture" src={url}></img>
+                        <input type="button" value="Unlike" onClick={()=>this.deletePic(url)}></input>
                     </div>)
                 })}
             </div>
